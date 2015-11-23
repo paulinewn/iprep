@@ -1,19 +1,3 @@
-SEARCH UNSORTED ARRAY ----------------------------------------------------------------------------------------
-
-def search(value, size, array):
-    count=0
-    for i in array[0:size]:
-        val = int(i)
-        if (val == value):
-            print count
-        val+=1
-        count+=1
-    return count
-value = int(raw_input())
-size = int(raw_input())
-array = raw_input().split()
-search (value,size,array)
-
 Insertion Sort  --------------------------------------------------------------------------------
 def insertionSort(ar): 
     for i in range(0,len(ar)):
@@ -55,7 +39,7 @@ m = input()
 ar = [int(i) for i in raw_input().strip().split()]
 insertionSort(ar)
 
-QUICKSORT ---------------------------------------------------------------------------
+Quicksort ---------------------------------------------------------------------------
 #!/bin/python
 def partition(ar):    
     less = []
@@ -86,7 +70,7 @@ ar = [int(i) for i in raw_input().strip().split()]
 partition(ar)
 stringconv( partition(ar))
 
-QUICKSORT -------------------------------------------------------------
+Quicksort: Print separate partitions  -------------------------------------------------------------
 #!/bin/python
 def quicksort(ar):    
     less = []
@@ -117,7 +101,7 @@ m = input()
 ar = [int(i) for i in raw_input().strip().split()]
 quicksort(ar)
 
-------------------------
+Quicksort: Psuedocode algorithm -------------------------------------------------------------------------------
 quicksort(A, lo, hi)
   if lo < hi
     p = partition(A, lo, hi)
@@ -140,7 +124,7 @@ partition(A, lo, hi)
         else 
             return j
 
-COUNTING SORT -----------------------------------
+Counting sort -----------------------------------
 def counting_sort(array, maxval):
     """in-place counting sort"""
     m = maxval + 1
@@ -153,7 +137,7 @@ def counting_sort(array, maxval):
             array[i] = a
             i += 1
     return (array,count)
-COUNTING SORT HACKERRANK -----------------------------------
+Counting Sort: Hackerrank solution  -----------------------------------
 def counting_sort(array):
     max=0
     for elem in array:
@@ -181,7 +165,7 @@ m=input()
 a= [int(i) for i in raw_input().strip().split()]
 stringconv(counting_sort(a))
 
-______
+Sort String: Based on rules -----------------------------------------
 # Enter your code here. Read input from STDIN. Print output to STDOUT
 def nohumor(a):
     for case in a[-1]:
