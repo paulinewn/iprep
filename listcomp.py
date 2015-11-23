@@ -1,6 +1,6 @@
-List: Flatten a list of lists---------------------------------------
+List: Flatten a list of lists----------------------------------------------------------------------------------------------
 [x for row in matrix for x in row]
-String: All Permutations of string with list comp -------------------
+String: All Permutations of string with list comp --------------------------------------------------------------------------
 def listCompPermute (num):
 	## len(num) < 1 , return [[]]
 	## insert each new value into possible interspaces

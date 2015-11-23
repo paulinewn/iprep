@@ -1,3 +1,36 @@
+Merge Sort ------------------------
+def mergeSort (arr): 
+    #split array
+    if len(arr)> 1:
+        mid = len(arr)//2
+        left = arr[:mid]
+        right = arr[mid:]
+        mergeSort(left)
+        mergeSort(right)
+        i=0
+        k=0
+        j=0
+        while i <len(left) and j <len(right):
+            if left[i] < right[j]:
+                arr[k] = left[i]
+                i=i+1
+            else: 
+                arr[k] = right [j]
+                j=j+1
+            k=k+1
+        #if anything is leftover, add from left[i]  
+        while i < len(left):
+            arr[k] = left[i]
+            i+=1
+            k+=1
+        #if anything is leftover, add from right[j]
+        while j <len(right):
+            arr[k] = right[j]
+            j+=1
+            k+=1
+    return arr
+
+
 Insertion Sort  --------------------------------------------------------------------------------
 def insertionSort(ar): 
     for i in range(0,len(ar)):

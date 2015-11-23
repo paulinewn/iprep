@@ -19,9 +19,43 @@ class Solution:
 			return solution
 
 BST: Given a binary search tree and target, find closest number to target----------------------
+
+BT: Height ----------------------------------------------------
+   int height(Node root)
+    {
+     if (root == null)
+         return 0;
+     else
+        return 1+ Math.max (height (root.left), height (root.right));          
+    }
+
 BT: Top view of binary tree -----------------------------------------------------------
+void top_view(Node root)
+    {
+     if (root == null)
+         System.out.print("null");
+    traverse_left(root.left);
+    System.out.print(root.data+" ");
+    traverse_right(root.right);
+}
+public void traverse_left (Node x)
+        {
+        if (x==null)
+            return;
+        traverse_left(x.left);
+        System.out.print(x.data+" ");
+    }
+public void traverse_right (Node x)
+    {
+    if (x==null)
+        return;
+    System.out.print(x.data + " ");
+        traverse_right(x.right);
+}
 
 BT: Return deepest node of binary tree  ------------------------------------------------
 
-BT: Inrder traversal ----------
+
+BT: Inorder traversal ----------
+
 BT: Postorder traversal -------

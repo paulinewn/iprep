@@ -177,3 +177,5 @@ Arrays: Merge n sorted arrays ----------------------------------
 Set: Implement iterator for a set -------------------------------
 String: Find substring in string -------------------------------------
 Array: Find kth element in reunion of two sorted arrays -----------
+String: Make sure symbols in a string match up ------------------------
+Every open parenthesis is matched with closed bracket -----------------------------

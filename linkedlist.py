@@ -1,4 +1,4 @@
-------INSERT FRONT LINKED LIST -----
+Insert front : Linked List -------------------------------
 def Insert (head, data):
     temp = Node(data)
     if head is None:
@@ -11,7 +11,7 @@ def Insert (head, data):
         while (current.next != None):
             current= current.next
         return head
-------DELETE NODE AT POSITION -------
+Delete Node : At Position ---------------------------------------------
 def Delete(head, position):
     place = 0
     if head is None:
@@ -29,7 +29,7 @@ def Delete(head, position):
             current=current.next 
     return head
 
------------ REVERSE PRINT LL ----------
+Reverse Print -------------------------------------------------------
 ITERATIVE
 def ReversePrint(head):
     length=0
@@ -57,7 +57,7 @@ def stringconv(A):
         string += char+"\n"
     print string
 
---------- REVERSE LINKED LIST ----------
+Reverse Linked List -------------------------------------------------------
 
 #Iterative
 def Reverse(head):
@@ -81,5 +81,17 @@ def recurse(head,last):
   return reverse(nxt, head)
   
 ---- MERGE TWO LINKED LISTS -------------------------
------ RETURN DEEPEST NODE IN B TREE -----------------
+def MergeLists(list1, list2):
+    if (list1 == None):
+        return list2
+    if (list2 == None):
+        return list1
+
+    if (list1.data < list2.data):
+        list1.next = MergeLists(list1.next, list2)
+        return list1
+    else:
+        list2.next = MergeLists(list2.next, list1)
+        return list2
+        
 Copy a linked list with random pointer -----------------

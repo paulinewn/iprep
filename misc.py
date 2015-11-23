@@ -1,9 +1,43 @@
-Design a cache ------------------------------------
-Make neural networks scalable across large datasets ----------
- 1st interview question - How can you merge k sorted data   
- streams using O(1) RAM? Also, explain in detail how will 
- you define the data stream object and its related functions
- /operations. 2nd interview questions - 
+Data Stream: Design a cache ------------------------------------
+    def __init__(self, username, password, url=WSDL_URL):
+            """Creating connection to the Thomson Reuters Dataworks Enterprise (DWE) server
+               (former Thomson Reuters Datastream).
+            """
+            self.client = Client(url, username=username, password=password)
+
+            self.show_request = False   # If True then request string will be printed
+            self.last_status = None     # Will contain status of last request
+            self.raise_on_error = True  # if True then error request will raise, otherwise
+                                        # either empty dataframe or partially retrieved
+                                        # data will be returned
+
+            # Trying to connect
+            try:
+                self.ver = self.version()
+            except:
+                raise DatastreamException('Can not retrieve the data')
+
+            # Creating UserData object
+            self.userdata = self.client.factory.create('UserData')
+            self.userdata.Username = username
+            self.userdata.Password = password
+
+            # Check available data sources
+            if 'Datastream' not in self.sources():
+                warnings.warn("'Datastream' source is not available for given subscription!")
+
+Info
+version
+System Info
+Sources of Data
+request
+Many requests
+status
+test status and warnn
+extract data
+parse data
+construct request
+fetch
 
  1. Write a code that 
  accepts integers as arrays and outputs the multiplication 
