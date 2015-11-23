@@ -65,7 +65,7 @@ n = raw_input()
 num_array=n.split(" ")
 printReverse(input, num_array)
 
-String: All Permutations of string -------------------------------------------------------------
+Permutations:  All Permutations of string -------------------------------------------------------------
 def allPermutations (string, step=0):
 	#print permutation if end reached
 	if step == len(string):
@@ -78,7 +78,7 @@ def allPermutations (string, step=0):
 		#recurse on unswapped portion of string
 		allPermutations (stringc, step+1)
 
-String: All Permutations of string with list comp ---------------
+Permutations : All Permutations of string with list comp ------------------------------
 def listCompPermute (num):
 	## len(num) < 1 , return [[]]
 	## insert each new value into possible interspaces
@@ -87,7 +87,7 @@ def listCompPermute (num):
 	for x in num:
 		results = [r[:i] +[x] + r[i:] for r in results for i in range (len(r)+1)]
 	return results
-Cipher : -----------------------------------------------------------------------
+Cipher -----------------------------------------------------------------------
 class Solution(object):
     def solve(self, cipher):
         """
@@ -135,7 +135,41 @@ if __name__ == "__main__":
         s = "%s\n" % (solution.solve(cipher))
         print s,
 
+Permutation thing -----------------------------------------
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+def nohumor(a):
+    for case in a[-1]:
+        s = input()
+        rs = s[::-1]
+        n= len(s)
+        for i in range (1, n):
+            d1 = abs(ord(s[i]) - ord(s[i-1]))
+            d2 = abs (ord(rs[i]) - ord(rs[i-1]))
+            if d1 != d2:
+                print("Not Funny")
+                break
+            else:
+                print("Funny")
+    
+def stringconv(A):
+    string =""
+    for i in A:
+        char = str(i)
+        string += char+" "
+    print string
+    
+m=input()
+a= raw_input()
+nohumor(a)
+
 String: Find a certain pattern in a string and replace --------------------------------------------------------------------------
+string = string.replace(string, old, new[, maxreplace])
+
+def replace(string, pos, new):
+    length = len(new)
+    for char in string:
+        s= [:pos] + new + s[:pos+length]
+
 String: Convert char string to an int --------------------------
 Array: Find frequency of number in sorted array ----------------
 Array: Implement a linked list using arrays ------------------
