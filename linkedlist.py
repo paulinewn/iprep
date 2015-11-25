@@ -57,7 +57,7 @@ def stringconv(A):
         string += char+"\n"
     print string
 
-Reverse Linked List -------------------------------------------------------
+Reverse Linked List ------------------------------------------------------------------------------------------------------
 
 #Iterative
 def Reverse(head):
@@ -80,7 +80,7 @@ def recurse(head,last):
   n.next = last
   return reverse(nxt, head)
   
----- MERGE TWO LINKED LISTS -------------------------
+---- MERGE TWO LINKED LISTS ----------------------------------------------------------------------------------
 def MergeLists(list1, list2):
     if (list1 == None):
         return list2
@@ -93,5 +93,32 @@ def MergeLists(list1, list2):
     else:
         list2.next = MergeLists(list2.next, list1)
         return list2
-        
-Copy a linked list with random pointer -----------------
+Get Node from pos from end ------------------------------------------------------------------------------------------
+def GetNode(head, position):
+    slow= head
+    fast = head
+    count = 0
+    length= 0
+    if head != None:
+        while count < position:
+            fast= fast.next
+            count +=1
+        while fast.next != None and slow.next != None:
+                fast= fast.next
+                slow= slow.next
+    return slow.data
+Copy a linked list with random pointer -----------------------------------------------------------------------------
+Check if Linked List is acyclic -------------------------------------------------------------------------------------
+def HasCycle(head):
+    slow = head
+    fast = head
+    while fast != None:
+        slow= slow.next
+        if slow == fast:
+            return 1
+        if fast.next != None:
+            fast=fast.next.net
+        else: 
+            return 0
+        if slow is fast:
+            return True
