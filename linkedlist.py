@@ -114,11 +114,9 @@ def HasCycle(head):
     fast = head
     while fast != None:
         slow= slow.next
+        if fast.next != None:
+            fast=fast.next.next
         if slow == fast:
             return 1
-        if fast.next != None:
-            fast=fast.next.net
         else: 
             return 0
-        if slow is fast:
-            return True

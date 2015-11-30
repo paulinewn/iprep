@@ -41,3 +41,30 @@ def bs (arr, x):
 				return bs ( arr[:midpoint],x)
 			else:
 				return bs (arr[midpoint+1:],x)
+
+Order Statistics ---------------------
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+def orderstats (array, k):
+    greater = []
+    less= []
+    equal = []
+    pivot = array[0]
+    for i in array:
+        if i < pivot:
+            less.append(i)
+        if i > pivot:
+            greater.append(i)
+        if i == pivot:
+            equal.append(i)
+    if len(greater) >= k:
+        return orderstats(greater, k)
+    if len(greater) == k-1:
+        return pivot
+    if len(greater) < k:
+        return orderstats (less, k-len(equal) -len(greater))
+    
+
+m = input()
+size = m//2+1
+ar = [int(i) for i in raw_input().strip().split()]
+print orderstats(ar, size)
